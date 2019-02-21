@@ -12,7 +12,15 @@ import UIKit
 class ViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
+    
+    var aContact = Contact(namePassed: "Maria Handschu", emailPassed: "maria@unc.edu", phone: "919-555-5555", type: 0)
+    
+    
     var contactList:  [Contact] = []//saves an empty array
+    
+    
+    
+    
     var newContact = Contact()//saves contact info from newContactVC
     
 

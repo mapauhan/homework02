@@ -23,6 +23,62 @@ class DetailsViewController: UIViewController {
         print("viewDidLoad")
         
         if contact != nil {
+            updateViewData()
+        }
+
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "EditContact" {
+            // Get the new view controller using segue.destination.
+            let dest = segue.destination as! EditContactVC
+            
+            contact?.name = self.nameLabel.text
+            contact?.email = self.emailLabel.text
+            contact?.phoneNum = self.phoneNum.text
+            
+            let homeAt = self.phoneType.text
+            
+            switch homeAt {
+            case "Cell":
+                contact?.phoneType = 0
+            case "Home":
+                contact?.phoneType = 1
+                
+            default:
+                contact?.phoneType = 2
+            }
+            
+            dest.contact = self.contact
+        }
+        
+        if segue.identifier == "BackToDetails" {
+            // Get the new view controller using segue.destination.
+            let dest = segue.destination as! DetailsViewController
+            
+            contact?.name = self.nameLabel.text
+            contact?.email = self.emailLabel.text
+            contact?.phoneNum = self.phoneNum.text
+            
+            let homeAt = self.phoneType.text
+            
+            switch homeAt {
+            case "Cell":
+                contact?.phoneType = 0
+            case "Home":
+                contact?.phoneType = 1
+                
+            default:
+                contact?.phoneType = 2
+            }
+            
+            dest.contact = self.contact
+        }
+        
+        
+    }
+    
+    private func updateViewData() {
         self.nameLabel.text = contact!.name!
         self.emailLabel.text = contact!.email!
         self.phoneNum.text = contact!.phoneNum!
@@ -36,7 +92,13 @@ class DetailsViewController: UIViewController {
         } else {
             phoneType.text = "Office"
         }
-        }
 
     }
+    
+    @IBAction func processPageReturn (unwindsegue: UIStoryboardSegue) {
+        
+        updateViewData()
+        
+    }
+
 }

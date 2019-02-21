@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7C150C6A221F27CE008D6404 /* EditContactVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C150C69221F27CE008D6404 /* EditContactVC.swift */; };
 		B95EC8E6221B087600B5E0C7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B95EC8E5221B087600B5E0C7 /* AppDelegate.swift */; };
 		B95EC8E8221B087600B5E0C7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B95EC8E7221B087600B5E0C7 /* ViewController.swift */; };
 		B95EC8EB221B087700B5E0C7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B95EC8E9221B087700B5E0C7 /* Main.storyboard */; };
@@ -19,6 +20,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7C150C69221F27CE008D6404 /* EditContactVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditContactVC.swift; sourceTree = "<group>"; };
 		B95EC8E2221B087600B5E0C7 /* homework02.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = homework02.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B95EC8E5221B087600B5E0C7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B95EC8E7221B087600B5E0C7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -72,6 +74,7 @@
 				B95EC8F7221B0B4100B5E0C7 /* Contact.swift */,
 				B95EC8F9221B13D500B5E0C7 /* NewContactVC.swift */,
 				B9647484221EFEF50045CB47 /* DetailsViewController.swift */,
+				7C150C69221F27CE008D6404 /* EditContactVC.swift */,
 			);
 			path = homework02;
 			sourceTree = "<group>";
@@ -152,6 +155,7 @@
 				B95EC8FC221B5A2700B5E0C7 /* ContactTableCell.swift in Sources */,
 				B95EC8E8221B087600B5E0C7 /* ViewController.swift in Sources */,
 				B95EC8E6221B087600B5E0C7 /* AppDelegate.swift in Sources */,
+				7C150C6A221F27CE008D6404 /* EditContactVC.swift in Sources */,
 				B9647485221EFEF50045CB47 /* DetailsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
