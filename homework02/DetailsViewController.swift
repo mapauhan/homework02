@@ -10,7 +10,8 @@ import UIKit
 
 class DetailsViewController: UIViewController {
     
-    var contact = Contact()
+    var contact: Contact?
+    
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var emailLabel: UILabel!
     @IBOutlet weak var phoneNum: UILabel!
@@ -21,20 +22,21 @@ class DetailsViewController: UIViewController {
         super.viewDidLoad()
         print("viewDidLoad")
         
-        self.nameLabel.text = contact.name!
-        self.emailLabel.text = contact.email!
-        self.phoneNum.text = contact.phoneNum!
-        self.phoneType.text = String(contact.phoneType!)
+        if contact != nil {
+        self.nameLabel.text = contact!.name!
+        self.emailLabel.text = contact!.email!
+        self.phoneNum.text = contact!.phoneNum!
+        self.phoneType.text = String(contact!.phoneType!)
         
-        if contact.phoneType == 0 {
+        if contact!.phoneType == 0 {
             phoneType.text = "Cell"
         }
-        else if contact.phoneType == 1 {
+        else if contact!.phoneType == 1 {
             phoneType.text = "Home"
         } else {
             phoneType.text = "Office"
         }
-        
+        }
 
     }
 }

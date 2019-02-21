@@ -32,6 +32,14 @@ class ViewController: UIViewController {
     
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "DetailsSeg" {
+            
+            let dest = segue.destination as! DetailsViewController
+            dest.contact = self.newContact
+        }
+    }
+    
     
     @IBAction func goBack(unwindSegue: UIStoryboardSegue) {
         
@@ -50,6 +58,7 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "contactCell", for: indexPath)
         let contact = contactList[indexPath.row]
+        self.newContact = contact
         
         let name = cell.viewWithTag(102) as! UILabel
         let email = cell.viewWithTag(103) as! UILabel

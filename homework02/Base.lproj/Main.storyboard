@@ -94,7 +94,7 @@
                     <navigationItem key="navigationItem" title="Contacts" id="5Op-kv-U7g">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="Ywu-oF-Am8">
                             <connections>
-                                <segue destination="rrc-9c-pVm" kind="presentation" id="SSL-bw-i6x"/>
+                                <segue destination="rrc-9c-pVm" kind="presentation" identifier="AddContact" id="SSL-bw-i6x"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
