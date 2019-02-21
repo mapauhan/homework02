@@ -12,6 +12,10 @@
 		B95EC8EB221B087700B5E0C7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B95EC8E9221B087700B5E0C7 /* Main.storyboard */; };
 		B95EC8ED221B087C00B5E0C7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B95EC8EC221B087C00B5E0C7 /* Assets.xcassets */; };
 		B95EC8F0221B087C00B5E0C7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B95EC8EE221B087C00B5E0C7 /* LaunchScreen.storyboard */; };
+		B95EC8F8221B0B4100B5E0C7 /* Contact.swift in Sources */ = {isa = PBXBuildFile; fileRef = B95EC8F7221B0B4100B5E0C7 /* Contact.swift */; };
+		B95EC8FA221B13D500B5E0C7 /* NewContactVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B95EC8F9221B13D500B5E0C7 /* NewContactVC.swift */; };
+		B95EC8FC221B5A2700B5E0C7 /* ContactTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B95EC8FB221B5A2700B5E0C7 /* ContactTableCell.swift */; };
+		B9647485221EFEF50045CB47 /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9647484221EFEF50045CB47 /* DetailsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +26,10 @@
 		B95EC8EC221B087C00B5E0C7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B95EC8EF221B087C00B5E0C7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B95EC8F1221B087C00B5E0C7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B95EC8F7221B0B4100B5E0C7 /* Contact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contact.swift; sourceTree = "<group>"; };
+		B95EC8F9221B13D500B5E0C7 /* NewContactVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewContactVC.swift; sourceTree = "<group>"; };
+		B95EC8FB221B5A2700B5E0C7 /* ContactTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactTableCell.swift; sourceTree = "<group>"; };
+		B9647484221EFEF50045CB47 /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,9 +65,13 @@
 				B95EC8E5221B087600B5E0C7 /* AppDelegate.swift */,
 				B95EC8E7221B087600B5E0C7 /* ViewController.swift */,
 				B95EC8E9221B087700B5E0C7 /* Main.storyboard */,
+				B95EC8FB221B5A2700B5E0C7 /* ContactTableCell.swift */,
 				B95EC8EC221B087C00B5E0C7 /* Assets.xcassets */,
 				B95EC8EE221B087C00B5E0C7 /* LaunchScreen.storyboard */,
 				B95EC8F1221B087C00B5E0C7 /* Info.plist */,
+				B95EC8F7221B0B4100B5E0C7 /* Contact.swift */,
+				B95EC8F9221B13D500B5E0C7 /* NewContactVC.swift */,
+				B9647484221EFEF50045CB47 /* DetailsViewController.swift */,
 			);
 			path = homework02;
 			sourceTree = "<group>";
@@ -135,8 +147,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B95EC8FA221B13D500B5E0C7 /* NewContactVC.swift in Sources */,
+				B95EC8F8221B0B4100B5E0C7 /* Contact.swift in Sources */,
+				B95EC8FC221B5A2700B5E0C7 /* ContactTableCell.swift in Sources */,
 				B95EC8E8221B087600B5E0C7 /* ViewController.swift in Sources */,
 				B95EC8E6221B087600B5E0C7 /* AppDelegate.swift in Sources */,
+				B9647485221EFEF50045CB47 /* DetailsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -283,6 +299,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = Y8TJSQT9C3;
 				INFOPLIST_FILE = homework02/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -300,6 +317,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = Y8TJSQT9C3;
 				INFOPLIST_FILE = homework02/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
