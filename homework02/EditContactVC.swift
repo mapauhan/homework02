@@ -30,13 +30,14 @@ class EditContactVC: UIViewController {
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
-        if segue.identifier == "backToDetails"{
+        contact?.name = self.txtName.text
+        contact?.email = self.txtEmail.text
+        contact?.phoneNum = self.txtPhone.text
+        contact?.phoneType = self.sgcPhoneType.selectedSegmentIndex
         
-            
-            
-        }
+        let dest = segue.destination as! DetailsViewController
         
-
+        dest.contact = self.contact
     }
 
 }

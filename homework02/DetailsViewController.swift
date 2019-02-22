@@ -27,7 +27,15 @@ class DetailsViewController: UIViewController {
         }
 
     }
-    
+
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(true)
+        
+        if contact != nil {
+            updateViewData()
+        }
+
+    }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "EditContact" {
             // Get the new view controller using segue.destination.
@@ -97,7 +105,8 @@ class DetailsViewController: UIViewController {
     
     @IBAction func processPageReturn (unwindsegue: UIStoryboardSegue) {
         
-        updateViewData()
+        print(contact?.name!)
+        //updateViewData()
         
     }
 
