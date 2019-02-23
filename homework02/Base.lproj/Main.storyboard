@@ -319,9 +319,9 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <items>
                                     <navigationItem title="Details" id="2jk-Dd-AOP">
-                                        <barButtonItem key="leftBarButtonItem" title="Contacts" id="aFC-Rd-4rH">
+                                        <barButtonItem key="leftBarButtonItem" title="Contact" id="f9U-4m-mwc">
                                             <connections>
-                                                <segue destination="BYZ-38-t0r" kind="show" id="VjY-wM-Db4"/>
+                                                <segue destination="BYZ-38-t0r" kind="show" id="JhG-T3-Sda"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>
@@ -491,6 +491,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="VjY-wM-Db4"/>
+        <segue reference="JhG-T3-Sda"/>
     </inferredMetricsTieBreakers>
 </document>

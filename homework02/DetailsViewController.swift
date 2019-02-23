@@ -8,14 +8,10 @@
 
 import UIKit
 
-protocol DeleteCellFromDetail {
-    func clickDeleteButton(cell: UITableViewCell)
-}
 
 class DetailsViewController: UIViewController {
     
     var contact: Contact?
-    var delegate: DeleteCellFromDetail?
     var workingCellIndexPath: IndexPath?
     var workingCell: UITableViewCell?
     
@@ -122,12 +118,4 @@ class DetailsViewController: UIViewController {
         
     }
 
-    @IBAction func deleteContact(_ sender: UIButton) {
-
-        delegate?.clickDeleteButton(cell: self.workingCell!)
-
-        print("deleteContact")
-        //dismiss(animated: true)
-        
-    }
 }
