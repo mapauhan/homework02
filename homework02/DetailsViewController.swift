@@ -16,6 +16,7 @@ class DetailsViewController: UIViewController {
     
     var contact: Contact?
     var delegate: DeleteCellFromDetail?
+    var workingCellIndexPath: IndexPath?
     var workingCell: UITableViewCell?
     
     @IBOutlet weak var nameLabel: UILabel!
@@ -31,7 +32,7 @@ class DetailsViewController: UIViewController {
         if contact != nil {
             updateViewData()
         }
-
+        print ("indexPath =\(workingCellIndexPath!)")
     }
 
     override func viewDidAppear(_ animated: Bool) {
@@ -89,6 +90,12 @@ class DetailsViewController: UIViewController {
             dest.contact = self.contact
         }
         
+        if segue.identifier == "backToList" {
+            
+            let dest = segue.destination as! ViewController
+            dest.workingCellIndexPath = self.workingCellIndexPath
+        }
+        
         
     }
     
@@ -111,7 +118,7 @@ class DetailsViewController: UIViewController {
     
     @IBAction func processPageReturn (unwindsegue: UIStoryboardSegue) {
         
-        print(contact?.name!)
+        print("processPageReturn with \(contact!.name!)")
         
     }
 
@@ -120,7 +127,7 @@ class DetailsViewController: UIViewController {
         delegate?.clickDeleteButton(cell: self.workingCell!)
 
         print("deleteContact")
-        dismiss(animated: true)
+        //dismiss(animated: true)
         
     }
 }

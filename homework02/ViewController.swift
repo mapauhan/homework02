@@ -21,6 +21,8 @@ class ViewController: UIViewController {
     var newContact = Contact()//saves contact info from newContactVC
     
     var workingCell: UITableViewCell?
+    var workingCellIndexPath: IndexPath?
+    
     
 
     override func viewDidLoad() {
@@ -42,7 +44,7 @@ class ViewController: UIViewController {
             
             let dest = segue.destination as! DetailsViewController
             dest.contact = self.newContact
-            dest.workingCell = self.workingCell
+            dest.workingCellIndexPath = self.tableView.indexPath(for: workingCell!)!
         }
     }
     
@@ -52,9 +54,12 @@ class ViewController: UIViewController {
         if unwindSegue.identifier == "addContactSegue" {
             contactList.append(newContact)
         }
-        if unwindSegue.identifier == "returnToList" {
-            print("returnToList")
+        if unwindSegue.identifier == "backToList" {
+            contactList.remove(at: workingCellIndexPath!.row)
+            tableView.reloadData()
         }
+        
+        
     }
 }
 
@@ -70,7 +75,11 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
         cell.delegate = self
         
         self.workingCell = cell
-        
+//        if workingCell != nil {
+//            
+//            let ip = tableView.indexPath(for: workingCell!)
+//            contactList.remove(at: ip!.row)
+//        }
         
     
         
