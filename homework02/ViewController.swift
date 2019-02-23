@@ -18,16 +18,17 @@ class ViewController: UIViewController {
     
     var contactList:  [Contact] = []//saves an empty array
     
-    
-    
-    
     var newContact = Contact()//saves contact info from newContactVC
+    
+    var workingCell: UITableViewCell?
     
 
     override func viewDidLoad() {
         super.viewDidLoad()
         print( "viewDidLoad" )
-
+        contactList.append(aContact)
+        tableView.reloadData()
+        
     }
     
    override func viewDidAppear(_ animated: Bool) {
@@ -36,15 +37,12 @@ class ViewController: UIViewController {
         tableView.reloadData()
     }
 
-    @IBAction func deleteContact(_ sender: Any) {
-    
-    }
-    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "DetailsSeg" {
             
             let dest = segue.destination as! DetailsViewController
             dest.contact = self.newContact
+            dest.workingCell = self.workingCell
         }
     }
     
@@ -53,6 +51,9 @@ class ViewController: UIViewController {
         
         if unwindSegue.identifier == "addContactSegue" {
             contactList.append(newContact)
+        }
+        if unwindSegue.identifier == "returnToList" {
+            print("returnToList")
         }
     }
 }
@@ -64,7 +65,15 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: "contactCell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "contactCell", for: indexPath) as! ContactTableCell
+        
+        cell.delegate = self
+        
+        self.workingCell = cell
+        
+        
+    
+        
         let contact = contactList[indexPath.row]
         self.newContact = contact
         
@@ -93,16 +102,24 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         newContact = contactList[indexPath.row]
+        
+        
 //      let cell = tableView.dequeueReusableCell(withIdentifier: "contactCell", for: indexPath)
         print("Selected row\(newContact)")
         performSegue(withIdentifier: "DetailsSeg", sender: nil)
-
-    
-    
-    
     }
+    
+    
 }
     
+extension ViewController: CustomCellDelegate {
+    func clickDeleteButton(cell: UITableViewCell) {
+        let ip = self.tableView.indexPath(for: cell)
+        print (ip)
+        contactList.remove(at: ip!.row)
+        tableView.reloadData()
+    }
+}
 
 
     

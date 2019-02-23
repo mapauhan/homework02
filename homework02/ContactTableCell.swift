@@ -8,12 +8,19 @@
 
 import UIKit
 
+protocol CustomCellDelegate {
+    func clickDeleteButton(cell: UITableViewCell)
+}
+
 class ContactTableCell: UITableViewCell {
     
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var emailLabel: UILabel!
     @IBOutlet weak var phoneNumLbl: UILabel!
     @IBOutlet weak var phoneTypeLbl: UILabel!
+    
+    // implement the delegate
+    var delegate: CustomCellDelegate?
     
     func populateCell(contact: Contact) {
         nameLabel.text = contact.name
@@ -32,4 +39,9 @@ class ContactTableCell: UITableViewCell {
 
     }
     
+    @IBAction func clickCellDeleteButton(_ sender: UIButton) {
+        print("clickCellDeleteButton")
+        delegate?.clickDeleteButton(cell: self)
+        
+    }
 }

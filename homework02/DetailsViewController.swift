@@ -8,9 +8,15 @@
 
 import UIKit
 
+protocol DeleteCellFromDetail {
+    func clickDeleteButton(cell: UITableViewCell)
+}
+
 class DetailsViewController: UIViewController {
     
     var contact: Contact?
+    var delegate: DeleteCellFromDetail?
+    var workingCell: UITableViewCell?
     
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var emailLabel: UILabel!
@@ -106,8 +112,15 @@ class DetailsViewController: UIViewController {
     @IBAction func processPageReturn (unwindsegue: UIStoryboardSegue) {
         
         print(contact?.name!)
-        //updateViewData()
         
     }
 
+    @IBAction func deleteContact(_ sender: UIButton) {
+
+        delegate?.clickDeleteButton(cell: self.workingCell!)
+
+        print("deleteContact")
+        dismiss(animated: true)
+        
+    }
 }
