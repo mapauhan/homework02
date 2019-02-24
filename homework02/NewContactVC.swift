@@ -19,38 +19,59 @@ class NewContactVC: UIViewController {
     var data: String?
     
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        //collecting data typed into UI
-        var contact = Contact(namePassed: nameField.text, emailPassed: emailField.text, phone: phoneField.text, type: typeSegmentedControl.selectedSegmentIndex)
+    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
         
-        //sending back data to ViewController
-        let destinationVC = segue.destination as! ViewController
-        destinationVC.contactList.append(contact)
-        
-        //passing data to detailsVC
-        if segue.identifier == "SegDetails" {
-            let destinationVC = segue.destination as! DetailsViewController
-            destinationVC.contact = self.contact
+        if nameField.text == nil || emailField.text == nil ||
+            phoneField.text == nil || nameField.text == "" || emailField.text == "" ||
+            phoneField.text == "" {
+            setAlert("Input Error", "Eroror Error beep bepp")
+            return false
             
-            
+        } else {
+            return true
         }
         
     }
-   
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        var contact = Contact(namePassed: nameField.text, emailPassed: emailField.text, phone: phoneField.text, type: typeSegmentedControl.selectedSegmentIndex)
     
-        //passing data to DetailsViewController
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-    }
-    
-    
-    @IBAction func cancelClicked(_ sender: Any) {
-        self.dismiss(animated: true)
-    }
-    
+        override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+            //collecting data typed into UI
+            
+            
+            var contact = Contact(namePassed: nameField.text, emailPassed: emailField.text, phone: phoneField.text, type: typeSegmentedControl.selectedSegmentIndex)
+            
+            //sending back data to ViewController
+            let destinationVC = segue.destination as! ViewController
+            destinationVC.contactList.append(contact)
+            
+            //passing data to detailsVC
+            if segue.identifier == "SegDetails" {
+                let destinationVC = segue.destination as! DetailsViewController
+                destinationVC.contact = self.contact
+                
+                
+            }
+            
+        }
+        
+        
+        func setAlert(_ message1: String, _ message2: String) {
+            
+            let myAlert = UIAlertController(title: message1, message: message2, preferredStyle:UIAlertController.Style.alert)
+            
+            myAlert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default,handler: nil))
+            
+            self.present(myAlert, animated: true, completion: nil)
+        }
+        
+        override func viewDidLoad() {
+            super.viewDidLoad()
+        }
+        
+        
+        @IBAction func cancelClicked(_ sender: Any) {
+            self.dismiss(animated: true)
+        }
+        
 }
 
 
